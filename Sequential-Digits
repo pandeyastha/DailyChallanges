@@ -1,0 +1,29 @@
+class Solution {
+public:
+    void check(string s, int stop, vector<int>&v,int low,int high)
+    {
+      string g;
+        for(int i=0;i<=9-stop;i++ )
+        { g="";
+            for(int j=0;j<stop;j++)
+                g=g+s[i+j];
+         int gi=stoi(g);
+         if(gi>=low &&gi<=high)
+             v.push_back(gi);
+        }
+        
+     return;
+            
+    }
+    vector<int> sequentialDigits(int low, int high) {
+        vector<int>v;
+        string s="123456789";
+        int lowerLimitDigits=log10(low)+1;
+        int higherLimitDigits=log10(high)+1;
+        for(int i=lowerLimitDigits;i<=higherLimitDigits;i++)
+        {
+            check(s,i,v,low,high);
+        }
+        return v;
+    }
+};
