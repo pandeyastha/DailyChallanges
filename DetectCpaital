@@ -1,0 +1,16 @@
+class Solution {
+public:                                                                                                           
+        bool flag=false;
+        int after=0;
+        if(isupper(word[0]))flag=true;
+        int n=word.size();
+        for(int i=1;i<word.size();i++)
+        {
+            
+            if(isupper(word[i]))after++;
+        }
+        if((flag==false &&after==0)||(flag==true &&after==0)||(flag==true && after==n-1))return true;
+        return false;
+        
+    }
+};
